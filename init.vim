@@ -1,5 +1,4 @@
 imap jj <Esc>
-set number relativenumber
 
 set nocompatible
 filetype off
@@ -14,3 +13,20 @@ call plug#end()
 
 colorscheme gruvbox
 map <silent> <C-n> :NERDTreeFocus<CR>
+
+syntax on
+set background=dark
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set number relativenumber
+set noswapfile
+set undodir=~/.vim/undod/
+set undofile
+set incsearch
+set nohlsearch
+set scrolloff=8
+set colorcolumn=80
+set signcolumn=yes
+
