@@ -6,6 +6,11 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'karb94/neoscroll.nvim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'lewis6991/gitsigns.nvim'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 syntax on
@@ -38,3 +43,6 @@ colorscheme dracula
 nnoremap <leader>v :e $MYVIMRC<CR>
 
 lua require('neoscroll').setup()
+
+lua require('gitsigns').setup()
+
