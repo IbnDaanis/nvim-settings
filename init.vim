@@ -3,18 +3,13 @@ imap jj <Esc>
 set nocompatible
 filetype off
 
-
 call plug#begin('~/.config/nvim/plugged')
     Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'pangloss/vim-javascript'
     Plug 'karb94/neoscroll.nvim'
 call plug#end()
 
-colorscheme dracula
-
 syntax on
 
-set background=dark
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -33,12 +28,12 @@ set signcolumn=yes
 filetype plugin indent on
 let mapleader = " "
 
-if(has("termguicolors"))
-    set termguicolors
+if (has("termguicolors"))
+  set termguicolors " enable true colors support
 endif
-
-let g:newtr_banner=0
-let g:markdown_fenced_languages = ['javascript', 'js=javascript', 'json=javascript']
+let g:dracula_colorterm = 0
+let g:dracula_italic = 1
+colorscheme dracula
 
 nnoremap <leader>v :e $MYVIMRC<CR>
 
