@@ -42,5 +42,4 @@ let g:markdown_fenced_languages = ['javascript', 'js=javascript', 'json=javascri
 
 nnoremap <leader>v :e $MYVIMRC<CR>
 
-
 lua require('neoscroll').setup()
