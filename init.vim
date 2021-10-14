@@ -9,8 +9,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'lewis6991/gitsigns.nvim'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    Plug 'windwp/nvim-autopairs'
+    Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
 syntax on
@@ -46,3 +46,6 @@ lua require('neoscroll').setup()
 
 lua require('gitsigns').setup()
 
+lua require('nvim-autopairs').setup()
+
+let g:airline#extensions#tabline#formatter = 'jsformatter'
