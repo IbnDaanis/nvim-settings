@@ -6,7 +6,6 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'karb94/neoscroll.nvim'
-    Plug 'windwp/nvim-autopairs'
     Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
@@ -39,9 +38,11 @@ colorscheme dracula
 
 nnoremap <leader>v :e $MYVIMRC<CR>
 
-lua require('neoscroll').setup()
+" initialize global object for config
+lua << EOF
+global = {}
+EOF
 
-lua require('nvim-autopairs').setup()
-
-
-
+lua require("neoscroll").setup()
+lua require("plugins")
+lua require("lsp") 
