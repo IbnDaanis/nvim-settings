@@ -1,6 +1,6 @@
 vim.cmd("packadd packer.nvim")
 
-packer = require('packer')
+packer = require("packer")
 
 return packer.startup(function()
   -- Packer can manage itself
@@ -16,17 +16,38 @@ return packer.startup(function()
 
   -- additional functionality
   use({
-    "windwp/nvim-autopairs", -- autocomplete pairs
+    "windwp/nvim-autopairs",
     config = config("autopairs"),
   })
 
   -- lsp
-  use("neovim/nvim-lspconfig") -- makes lsp configuration easier
+  use("neovim/nvim-lspconfig") 
   use("nvim-lua/completion-nvim")
 
-  use {
-    'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+  -- Lualine 
+  use({
+    "hoob3rt/lualine.nvim",
+    requires = {"kyazdani42/nvim-web-devicons", opt = true},
     config = config("lualine")
-  }
+  })
+
+  -- Neoscroll
+  use({
+    "karb94/neoscroll.nvim",
+    config = config("neoscroll")
+  })
+
+  -- Colorizer
+  use({
+    "norcalli/nvim-colorizer.lua",
+    config = config("colorizer")
+  })
+
+  -- Dracula
+  use({
+    'dracula/vim',
+    as = 'dracula',
+    config = config("theme")
+  })
+
 end)

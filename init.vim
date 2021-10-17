@@ -3,12 +3,6 @@ imap jj <Esc>
 set nocompatible
 filetype off
 
-call plug#begin('~/.config/nvim/plugged')
-    Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'karb94/neoscroll.nvim'
-    Plug 'norcalli/nvim-colorizer.lua'
-call plug#end()
-
 syntax on
 
 set tabstop=2 softtabstop=2
@@ -32,17 +26,10 @@ let mapleader = " "
 if (has("termguicolors"))
   set termguicolors " enable true colors support
 endif
+
 let g:dracula_colorterm = 0
 let g:dracula_italic = 1
 colorscheme dracula
 
-nnoremap <leader>v :e $MYVIMRC<CR>
-
-" initialize global object for config
-lua << EOF
-global = {}
-EOF
-
-lua require("neoscroll").setup()
 lua require("plugins")
 lua require("lsp") 
