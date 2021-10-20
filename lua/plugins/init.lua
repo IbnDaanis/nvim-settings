@@ -20,9 +20,29 @@ return packer.startup(function()
     config = config("autopairs"),
   })
 
+  -- TreeSitter
+  use({
+    'nvim-treesitter/nvim-treesitter', 
+    run = ':TSUpdate',
+    config = config("treesitter")
+  })
+
   -- lsp
   use("neovim/nvim-lspconfig") 
   use("nvim-lua/completion-nvim")
+
+  -- Completion 
+  use'hrsh7th/cmp-nvim-lsp'
+  use'hrsh7th/cmp-buffer'
+  use({
+    'hrsh7th/nvim-cmp',
+    config = config("cmp")
+  })
+  use'hrsh7th/cmp-vsnip'
+  use'hrsh7th/vim-vsnip'
+
+  -- VS Code Like Pictograms
+  use'onsails/lspkind-nvim'
 
   -- Lualine 
   use({
