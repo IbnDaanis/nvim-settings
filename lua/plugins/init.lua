@@ -67,7 +67,7 @@ return packer.startup(function()
   use({
     'dracula/vim',
     as = 'dracula',
-    config = config("theme")
+    config = config("colorscheme")
   })
 
 end)
