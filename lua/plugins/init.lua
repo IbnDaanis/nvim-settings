@@ -17,6 +17,7 @@ return packer.startup(function()
   -- additional functionality
   use({
     "windwp/nvim-autopairs",
+    after = {'nvim-treesitter', 'nvim-cmp'},
     config = config("autopairs"),
   })
 
@@ -40,6 +41,10 @@ return packer.startup(function()
   })
   use'hrsh7th/cmp-vsnip'
   use'hrsh7th/vim-vsnip'
+  use({
+    'windwp/nvim-ts-autotag',
+    config = config("autotag")
+  })
 
   -- VS Code Like Pictograms
   use'onsails/lspkind-nvim'
@@ -49,6 +54,20 @@ return packer.startup(function()
     "hoob3rt/lualine.nvim",
     requires = {"kyazdani42/nvim-web-devicons", opt = true},
     config = config("lualine")
+  })
+
+  -- Bufferline
+  use({
+    'akinsho/bufferline.nvim', 
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = config("bufferline")
+  })
+
+  -- Nvim Tree
+  use ({
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = config("nvim-tree")
   })
 
   -- Neoscroll
